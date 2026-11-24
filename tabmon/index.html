@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TabMon Privacy Policy</title>
+        <style>
+            :root {
+                --primary: #0077b5;
+                --text: #2c3e50;
+                --background: #f8f9fa;
+            }
+
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                    Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+                line-height: 1.6;
+                color: var(--text);
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                background: var(--background);
+            }
+
+            .container {
+                background: white;
+                padding: 40px;
+                border-radius: 12px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            h1,
+            h2,
+            h3 {
+                color: var(--primary);
+            }
+
+            h1 {
+                font-size: 2.5em;
+                margin-bottom: 1em;
+            }
+
+            h2 {
+                margin-top: 2em;
+            }
+
+            .project-section {
+                border-left: 4px solid var(--primary);
+                padding-left: 20px;
+                margin: 2em 0;
+            }
+
+            .footer {
+                margin-top: 4em;
+                padding-top: 2em;
+                border-top: 1px solid #eee;
+                text-align: center;
+                color: #666;
+            }
+
+            a {
+                color: var(--primary);
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <main class="container">
+            <h1>TabMon Privacy Policy</h1>
+            <p>Last updated November 24, 2026</p>
+            <p>TabMon is a browser extension that runs a creature-collecting game while you browse.
+                It has no TabMon account, analytics, telemetry, or crash reporting. Its game code
+                loads sounds and images from the installed extension.</p>
+
+            <h2>Information TabMon uses</h2>
+            <ul>
+                <li><strong>Collection and settings.</strong> TabMon reads and saves your creatures,
+                    custom creature names, catch dates, progress, training, and ready squad.
+                    It also saves settings such as sound, appearance, and spawn controls.
+                    These records use the browser's extension sync storage. If browser sync
+                    is enabled for this data, your browser provider can sync it to your account
+                    and other eligible profiles. Extra collection entries can be held on this
+                    device when the synced record is full.</li>
+                <li><strong>Website information.</strong> The extension runs a content script so
+                    it can show the encounter cue. It reads the current page URL and whether the
+                    page is visible or focused to decide where the cue can appear and apply your
+                    blocklist. It keeps the last focused HTTP or HTTPS site's origin on this
+                    device. An origin includes the scheme, hostname, and any port. TabMon does
+                    not store the page path, query, or fragment in that record. It does not
+                    read page content, forms, cookies, or browsing history.</li>
+                <li><strong>Local game state.</strong> Your site blocklist, current encounter and
+                    spawn timing, saved battles, catch and onboarding markers, and audio resume
+                    position stay in the local browser profile. TabMon does not send that data
+                    to its developer.</li>
+            </ul>
+
+            <h2>Backups and controls</h2>
+            <p>The export button saves a collection backup as a JSON file. You can restore that
+                file in TabMon or share it yourself. TabMon does not upload it. You can manage
+                browser sync through your browser, edit the blocklist in Settings, release
+                creatures from your collection, and remove locally stored extension data by
+                uninstalling TabMon.</p>
+
+            <h2>Children</h2>
+            <p>TabMon is not directed at children under 13.</p>
+
+            <div class="footer" id="support">
+                <h2>TabMon support</h2>
+                <p>For help with TabMon or questions about this policy, email
+                    <a href="mailto:draconwin@gmail.com">draconwin@gmail.com</a>.
+                    Include your browser and TabMon version if you are reporting a problem.</p>
+                <p><a href="../">All privacy policies</a></p>
+            </div>
+        </main>
+    </body>
+</html>
