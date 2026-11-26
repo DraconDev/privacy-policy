@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!--
+  AI Chat Toolkit — hosted privacy policy.
+  Generated from PRIVACY.md on 2026-11-25 for upload to dracon.uk.
+  PRIVACY.md is the source of truth: if the policy changes, edit it there
+  and regenerate this file, then re-upload. The store listings
+  (CWS_SUBMISSION.txt, AMO_SUBMISSION.txt, EDGE_SUBMISSION.txt) point at
+  the uploaded URL.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy — AI Chat Toolkit</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    max-width: 44rem;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { border: 1px solid #888; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+  code { font-family: ui-monospace, monospace; font-size: 0.9em; }
+  footer { margin-top: 2rem; font-size: 0.85em; opacity: 0.75; }
+</style>
+</head>
+<body>
+<h1>Privacy — AI Chat Toolkit</h1>
+<p><strong>AI Chat Toolkit stores your data in your browser by default.</strong></p>
+<p>The extension has no server, no account, no analytics, no telemetry and no
+licence check. It interacts with supported AI chat sites in the tabs you
+use, with your existing session where the site requires one.</p>
+<h2>What is stored, and where</h2>
+<p>Extension data is stored locally by default, in your own browser, in
+<code>chrome.storage.local</code> under the extension's own origin:</p>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Settings</td>
+<td>The switches on the options page, and which profile is active.</td>
+</tr>
+<tr>
+<td>Profiles</td>
+<td>The name, instructions, model key, thinking level and web-search preference you wrote.</td>
+</tr>
+<tr>
+<td>Folders and prompt collections</td>
+<td>The names, nesting and auto-file rules you created.</td>
+</tr>
+<tr>
+<td>Prompts</td>
+<td>The title, body and tags you saved.</td>
+</tr>
+<tr>
+<td>Per-chat notes</td>
+<td>The note text you attached to a conversation.</td>
+</tr>
+<tr>
+<td>Chat filings (legacy, no longer written)</td>
+<td>Older builds remembered which conversations were filed into which toolkit chat folder. Chats now file as ordinary browser bookmarks instead; leftover filing entries sit unread in local storage and are never transmitted.</td>
+</tr>
+<tr>
+<td>Tracked tasks</td>
+<td>The title and address of each chat that was working, stuck, failed or finished in a tab you had open, with when it started, last reported, why it failed and how many times it has been retried. When a site shows no title for a chat, the title is up to 60 characters of your first message in it. A task is dropped a day after it was last touched, and you can dismiss one sooner. The task record can include a short error reason derived from a reply. It does not keep the full reply. Turn tracking off on the options page and nothing new is recorded.</td>
+</tr>
+<tr>
+<td>Input recall</td>
+<td>Recent text you typed into a composer, kept per site for the up-arrow recall.</td>
+</tr>
+<tr>
+<td>Cross-chat handoff</td>
+<td>A prepared handoff — up to 12,000 characters of the conversation — carried to the chat site you chose; a receiving page can claim it within 10 minutes.</td>
+</tr>
+<tr>
+<td>Usage counters</td>
+<td>Per-site, per-day counts of staged sends and dressed characters, shown on the launcher badge.</td>
+</tr>
+<tr>
+<td>Starred turns</td>
+<td>Which turns of a conversation you starred on the rail.</td>
+</tr>
+<tr>
+<td>Sidebar layout</td>
+<td>Which sidebar sections you kept open or hid, and which tab you last had showing.</td>
+</tr>
+<tr>
+<td>Prompt library storage</td>
+<td>Whether the library stays in this browser or syncs, as you chose on the options page. The prompts themselves are in the rows above.</td>
+</tr>
+</tbody>
+</table>
+<p>Uninstalling the extension removes its local storage. If you enable prompt
+sync in Settings, your library moves to the browser's built-in sync storage
+(<code>chrome.storage.sync</code>). Your browser vendor may replicate it to your other
+devices under your browser's sync settings.</p>
+<h2>What is read from the page</h2>
+<p>The extension reads the AI chat page you have open so it can do the thing
+you asked for:</p>
+<ul>
+<li>the conversation on screen, to show it in the panel and export it;</li>
+<li>the history list the site has rendered, to let you file chats;</li>
+<li>the composer, to put a prompt or a profile's instructions into it;</li>
+<li>the site's own controls — the model picker, the thinking-level menu, the
+send and stop buttons — so a profile can set them as if you had clicked.</li>
+<li>whether a reply is still running on the page (the site's stop control or
+its progress indicator), and the chat's title, so the Folders tab can list
+it. The toolkit inspects the newest reply locally to identify error messages.</li>
+<li>the last thing you asked in the chat, when a failed run is retried: the
+prompt is read back from the conversation so the same message can be
+sent again.</li>
+</ul>
+<p>The toolkit reads page content only on supported chat sites while the page
+is open. When you open, re-prompt or retry a tracked chat, it checks the
+URLs of matching open tabs to find that conversation. It does not read
+the contents of those tabs for this lookup. It does not read your browsing
+history, passwords or cookies.</p>
+<h2>What is written back, and when</h2>
+<p>The toolkit can change the model and other chat controls as part of applying
+your selected profile. Profile instructions and prompts you put into a
+composer go to that chat provider when sent. You can configure a saved
+prompt to send when you run it or choose to send it yourself.</p>
+<p>On ChatGPT, the bulk chat manager offers <strong>Archive</strong>, <strong>Pin</strong> and <strong>Hide</strong>
+(or &quot;Delete&quot;, the button the panel labels with what the site does) on the
+conversations it lists. Choosing them and pressing the button sends the same
+request the site itself would, with your own signed-in session: <code>is_archived</code>,
+<code>is_starred</code> or <code>is_visible</code> on the conversation you selected. Nothing is
+written until you select a chat and press the button. The result is reported
+per chat.</p>
+<p>A re-prompt, pressed on a stuck chat in the Folders tab, types one fixed
+sentence into that chat's own message box and sends it, after stopping the
+stuck reply where the site has a stop control. It never writes over a draft
+you left there. The sentence is visible in the chat like any message you send.</p>
+<p>A failed run is tried again on its own: the extension sends your own prompt
+a second time, the same message you sent first, read back from the
+conversation. It does this for an eligible run that produced no usable answer,
+while <strong>Run a failed prompt again on its own</strong> is on in Settings. The bounds
+are fixed: at most three retries a run, fifteen seconds apart, and never for
+a failure that will not get better on its own — a quota, a rate limit or an
+expired sign-in is reported to you instead. It never sends over a draft you
+left in the message box, and never sends while a reply is still running. You
+can also press <strong>Retry</strong> on the card yourself, which is not capped.</p>
+<p>It does read your bookmark <em>folders</em> — titles only, to offer them in the
+save picker — and it creates one bookmark when you ask it to save the open
+chat. That is what the <code>bookmarks</code> permission is for, and the only thing it
+is used for.</p>
+<h2>Where requests go</h2>
+<p>The extension sends no data to its developer, analytics services, licence
+servers or advertising services. The audit bridge is included only in a
+dedicated maintainer build for disposable browser profiles.</p>
+<p>The extension reads conversation data from ChatGPT's own API with your
+existing ChatGPT session to support history, exports and message dates.
+History reads use a fixed page and time budget. A rate limit ends the read,
+and partial results are identified in the export.</p>
+<h2>Permissions, and why each one exists</h2>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>storage</code></td>
+<td>The settings and the local catalogue above.</td>
+</tr>
+<tr>
+<td><code>bookmarks</code></td>
+<td>Save the open chat when you ask for it, and list your bookmark folders for the save picker.</td>
+</tr>
+<tr>
+<td><code>contextMenus</code></td>
+<td>The &quot;Save selection as prompt&quot; right-click item. The highlighted text is saved to your prompt library using its current storage setting.</td>
+</tr>
+<tr>
+<td>Host access to the supported AI chat sites</td>
+<td>The content script that renders the panel has to run on those pages.</td>
+</tr>
+</tbody>
+</table>
+<p>There is no <code>tabs</code>, <code>scripting</code>, <code>downloads</code>, <code>alarms</code>, <code>cookies</code>,
+<code>history</code>, <code>identity</code> or <code>oauth2</code>. Exports are saved with a
+blob URL and a synthetic click, which needs no permission.</p>
+<h2>Contact</h2>
+<p>Questions about this policy: <strong>support@dracon.uk</strong></p>
+<p>The same address is the bug report and feedback route on the options page.</p>
+</body>
+</html>
