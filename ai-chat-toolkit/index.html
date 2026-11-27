@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
   AI Chat Toolkit — hosted privacy policy.
-  Generated from PRIVACY.md on 2026-11-25 for upload to dracon.uk.
+  Generated from PRIVACY.md on 2026-11-27 for upload to dracon.uk.
   PRIVACY.md is the source of truth: if the policy changes, edit it there
   and regenerate this file, then re-upload. The store listings
   (CWS_SUBMISSION.txt, AMO_SUBMISSION.txt, EDGE_SUBMISSION.txt) point at
@@ -69,8 +69,8 @@ use, with your existing session where the site requires one.</p>
 <td>Older builds remembered which conversations were filed into which toolkit chat folder. Chats now file as ordinary browser bookmarks instead; leftover filing entries sit unread in local storage and are never transmitted.</td>
 </tr>
 <tr>
-<td>Tracked tasks</td>
-<td>The title and address of each chat that was working, stuck, failed or finished in a tab you had open, with when it started, last reported, why it failed and how many times it has been retried. When a site shows no title for a chat, the title is up to 60 characters of your first message in it. A task is dropped a day after it was last touched, and you can dismiss one sooner. The task record can include a short error reason derived from a reply. It does not keep the full reply. Turn tracking off on the options page and nothing new is recorded.</td>
+<td>Tracked tasks and run history</td>
+<td>The title and address of each chat that was working, stuck, failed or finished in a tab you had open, with when it started, last reported, why it failed and how many times it has been retried. When a site shows no title for a chat, the title is up to 60 characters of your first message in it. Live tasks are dropped a day after they were last touched. Completed and failed runs appear in the separate History section for 30 days. You can dismiss live tasks sooner. The task record can include a short error reason derived from a reply. It does not keep the full reply. Turn tracking off on the options page and nothing new is recorded.</td>
 </tr>
 <tr>
 <td>Input recall</td>
@@ -148,10 +148,12 @@ a failure that will not get better on its own — a quota, a rate limit or an
 expired sign-in is reported to you instead. It never sends over a draft you
 left in the message box, and never sends while a reply is still running. You
 can also press <strong>Retry</strong> on the card yourself, which is not capped.</p>
-<p>It does read your bookmark <em>folders</em> — titles only, to offer them in the
-save picker — and it creates one bookmark when you ask it to save the open
-chat. That is what the <code>bookmarks</code> permission is for, and the only thing it
-is used for.</p>
+<p>It requests the browser's bookmark tree to identify folders. The browser
+provides the full tree, including bookmark URLs, but the toolkit uses,
+returns and stores only folder metadata (id, title, parent id and path) for
+the save picker. No bookmark URL from that tree is stored or transmitted.
+It creates one bookmark when you ask it to save the open chat. That is what
+the <code>bookmarks</code> permission is for, and the only thing it is used for.</p>
 <h2>Where requests go</h2>
 <p>The extension sends no data to its developer, analytics services, licence
 servers or advertising services. The audit bridge is included only in a
